@@ -1,0 +1,26 @@
+{
+    new(name, label, query, tagValuesQuery, ds)::
+        {
+            allFormat: "glob",
+            allValue: null,
+            current: {},
+            datasource: ds,
+            hide: 0,
+            includeAll: false,
+            label: label,
+            multi: false,
+            multiFormat: "regex values",
+            name: name,
+            options: [],
+            query: query,
+            refresh: 1,
+            refresh_on_load: false,
+            regex: "",
+            sort: 1,
+            tagValuesQuery: tagValuesQuery,
+            tags: [],
+            tagsQuery: "up",
+            type: "query",
+            useTags: false,
+        },
+}
