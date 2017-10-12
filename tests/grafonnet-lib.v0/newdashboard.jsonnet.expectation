@@ -1,0 +1,9 @@
+{
+   "editable": true,
+   "rows": [ ],
+   "templating": {
+      "list": [ ]
+   },
+   "timezone": "browser",
+   "title": "Example dashboard"
+}
