@@ -1,10 +1,9 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: sparkprime/jsonnet
+    machine: true
     steps:
       - checkout
       - run:
           name: unit tests
-          command: sh tests.sh
+          command: docker run --entrypoint sh sparkprime/jsonnet tests.sh
