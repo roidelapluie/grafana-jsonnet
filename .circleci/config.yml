@@ -15,7 +15,7 @@ jobs:
           command: sleep 10
       - run:
           name: debug
-          command: docker ps
+          command: docker logs grafana
       - run:
           name: acceptance tests
           command: docker run -u $UID --rm -w $PWD -v $PWD:$PWD --network=container:grafana circleci/python:2.7-browsers bash acceptance.sh
