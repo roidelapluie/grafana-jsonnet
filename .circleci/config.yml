@@ -10,3 +10,6 @@ jobs:
       - run:
           name: start grafana
           command: docker run -d -v $PWD:$PWD -e GF_DASHBOARDS_JSON_ENABLED=true -e GF_DASHBOARDS_JSON_PATH=$PWD/tests --name=grafana -p 3000:3000 grafana/grafana
+      - run:
+          name: acceptance tests
+          command: docker run -u $UID --rm -w $PWD -v $PWD:$PWD --network=container:grafana circleci/python:2.7-browsers bash acceptance.sh
