@@ -6,4 +6,4 @@ jobs:
       - checkout
       - run:
           name: unit tests
-          command: docker run --entrypoint sh sparkprime/jsonnet tests.sh
+          command: docker run -w $PWD -v $PWD:$PWD --entrypoint sh sparkprime/jsonnet tests.sh
