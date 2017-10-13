@@ -3,8 +3,9 @@
 x=0
 for i in tests/*/*.jsonnet
 do
+    json=$(dirname $i)/$( basename $i .jsonnet ).json
     t="Compiling $i..."
-    if jsonnet  -J . $i > $i.result
+    if jsonnet  -J . $i > $json
     then
         echo $t OK
     else
@@ -14,7 +15,7 @@ do
     fi
 
     t="Checking $i..."
-    if diff $i.result $i.expectation
+    if diff $json $i.expectation
     then
         echo $t OK
     else
@@ -22,4 +23,4 @@ do
         x=1
     fi
 done
-return $x
+exit $x
