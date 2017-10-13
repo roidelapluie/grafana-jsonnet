@@ -11,6 +11,9 @@ jobs:
           name: start grafana
           command: docker run -d -v $PWD:$PWD -e GF_DASHBOARDS_JSON_ENABLED=true -e GF_DASHBOARDS_JSON_PATH=$PWD/tests --name=grafana -p 3000:3000 grafana/grafana
       - run:
+          name: sleep
+          command: sleep 10
+      - run:
           name: debug
           command: docker ps
       - run:
